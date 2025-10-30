@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskin HTML, CSS and javascript</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* .section{
+            width: 100vw;
+            height: 100vh;
+        } */
+        .main{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            width: 100vw;
+            height: 100vh;
+            margin: auto;
+            place-items: center;
+        }
+        .grid{
+            width: 250px;
+            height: 250px;
+            background: #ddd;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+        .grid:nth-child(4){
+            display: none;
+        }
+        .show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="section">
+        <div class="main">
+            <div class="grid"> 
+                <button> button1 </button>
+            </div>
+            <div class="grid"> 
+                <button> button2 </button>
+            </div>
+            <div class="grid"> 
+                <button> button3 </button>
+            </div>
+            <div class="grid"> 
+                <button> button4 </button>
+            </div>
+        </div>
+    </div>  
+
+
+    <script>
+        const btn1 = document.querySelector('.grid:nth-child(1) button');
+        const btn2 = document.querySelector('.grid:nth-child(2) button');
+        const btn3 = document.querySelector('.grid:nth-child(3) button');
+        const btn4 = document.querySelector('.grid:nth-child(4) button');
+        const grid4 = document.querySelector('.grid:nth-child(4)');
+
+        btn1.addEventListener('click', () => {
+            btn4.addClassList.toggle('show');
+        });
+
+    </script>
+</body>
+</html>
